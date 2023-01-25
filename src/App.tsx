@@ -1,34 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+import * as React from 'react';
+import { Routes, Route } from "react-router-dom";
+import MainNavBar from './common/mainNavbar';
+import Homepage from './homepage/homepage';
+import "../cssDist/index.css";
+
+interface AppProps {
+  
+}
+ 
+interface AppState {
+  
+}
+ 
+class App extends React.Component<AppProps, AppState> {
+  state: AppState = {}
+  render() { 
+    return (
+      <React.Fragment>
+        <MainNavBar />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+        </Routes>
+      </React.Fragment>
+    );
+  }
 }
 
 export default App
