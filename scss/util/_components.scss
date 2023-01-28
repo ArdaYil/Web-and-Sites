@@ -1,0 +1,25 @@
+
+
+@use "functions" as f;
+
+%btn {
+    border-radius: f.em(30);
+    padding: f.em(12) f.em(15);
+    font-weight: 600;
+}
+
+.btn {
+    &--no-bg {
+        @extend %btn;
+
+        background: none;
+        border: f.em(2) solid black;
+    }
+
+    &--black {
+        @extend %btn;
+
+        background: black;
+        color: white;
+    }
+}

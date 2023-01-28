@@ -17,12 +17,12 @@ class MainNavBar extends React.Component<MainNavBarProps, MainNavBarState> {
         return (
             <React.Fragment>
                 <nav className="navbar">
-                    <h1>Web & Sites</h1>
+                    <Link className="navbar__nav-title" to="/">Web & Sites</Link>
                     <article>
-                        <Link to="/">Designer</Link>
-                        <Link to="/">Kontakta oss</Link>
-                        <Link to="/">Priser</Link>
-                        <Link to="/">Logga in</Link>
+                        <Link className="navbar__nav-link" to="/">Designer</Link>
+                        <Link className="navbar__nav-link" to="/">Kontakta oss</Link>
+                        <Link className="navbar__nav-link" to="/">Priser</Link>
+                        <Link className="navbar__nav-link" to="/">Logga in</Link>
                     </article>
                 </nav>
             </React.Fragment>

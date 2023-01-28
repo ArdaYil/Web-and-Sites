@@ -1,9 +1,18 @@
 
+@use "sass:math";
 
 @function toRelativeUnit($px) {
-    @if (math.isUnitless(px)) {
-
+    @if (math.is-unitless($px)) {
+        @return math.div($px, 16);
     }
 
-    @error("")
+    @error("First positional argument must be unitless");
+}
+
+@function em($px) {
+    @return toRelativeUnit($px) + em;
+}
+
+@function rem($px) {
+    @return toRelativeUnit($px) + rem;
 }

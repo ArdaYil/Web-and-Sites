@@ -1,6 +1,7 @@
 
 
 import * as React from 'react';
+import Hero from "./hero";
 
 interface HomepageProps {
     
@@ -16,7 +17,7 @@ class Homepage extends React.Component<HomepageProps, HomepageState> {
     render() { 
         return (
             <React.Fragment>
-                <h1>Homepage</h1>
+                <Hero />
             </React.Fragment>
         );
     }

@@ -1,6 +1,55 @@
 
 
+@use "../util" as u;
+
 .navbar {
-    background-color: rgb(71, 71, 255);
+    background: linear-gradient(90deg, rgba(0,60,153,1) 30%, rgba(0,125,255,1) 100%);
+    //background-color: rgb(71, 71, 255);
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: u.em(20) u.em(30);
+
+    &__nav-title {
+        font-weight: 700;
+        font-size: u.rem(32);
+        color: white;
+    }
+
+    &__nav-link {
+        color: white;
+        font-weight: 600;
+        margin-right: u.em(30);
+    }
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60%;
+    gap: u.em(20);
+    margin-top: u.em(40);
+    margin-inline: auto;
+
+    &__title {
+        font-size: u.rem(25);
+        margin-bottom: u.em(20);
+    }
+
+    &__text {
+        font-size: u.rem(20);
+        margin-bottom: u.em(40);
+    }
+
+    &__img {
+        width: u.em(600);
+        border-radius: u.em(20);
+        grid-row: span 3;
+    }
+
+    &__btn-holder {
+        display: flex;
+        gap: u.em(20)
+    }
 }
