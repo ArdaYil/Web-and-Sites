@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Hero from "./hero";
+import Main from './main';
 
 interface HomepageProps {
     
@@ -18,6 +19,7 @@ class Homepage extends React.Component<HomepageProps, HomepageState> {
         return (
             <React.Fragment>
                 <Hero />
+                <Main />
             </React.Fragment>
         );
     }

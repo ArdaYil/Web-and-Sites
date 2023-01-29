@@ -6,20 +6,36 @@
     border-radius: f.em(30);
     padding: f.em(12) f.em(15);
     font-weight: 600;
+    transition: all 500ms;
+}
+
+%black-btn {
+    background: black;
+    color: white;
+}
+
+%no-bg-btn {
+    background: none;
+    border: f.em(2) solid black;
+    color: black;
 }
 
 .btn {
     &--no-bg {
         @extend %btn;
+        @extend %no-bg-btn;
 
-        background: none;
-        border: f.em(2) solid black;
+        &:hover {
+            @extend %black-btn;
+        }
     }
 
     &--black {
         @extend %btn;
+        @extend %black-btn;
 
-        background: black;
-        color: white;
+        &:hover {
+            @extend %no-bg-btn;
+        }
     }
 }

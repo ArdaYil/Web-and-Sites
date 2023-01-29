@@ -10,6 +10,7 @@
     align-items: center;
     justify-content: space-between;
     padding: u.em(20) u.em(30);
+    margin-bottom: u.em(80);
 
     &__nav-title {
         font-weight: 700;
@@ -21,6 +22,22 @@
         color: white;
         font-weight: 600;
         margin-right: u.em(30);
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: white;
+            left: 0;
+            height: 2px;
+            width: 0;
+            bottom: -8px;
+            transition: all 0.2s;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
     }
 }
 
@@ -29,7 +46,6 @@
     grid-template-columns: 1fr 1fr;
     width: 60%;
     gap: u.em(20);
-    margin-top: u.em(40);
     margin-inline: auto;
 
     &__title {
@@ -51,5 +67,34 @@
     &__btn-holder {
         display: flex;
         gap: u.em(20)
+    }
+}
+
+.main {
+    margin-top: u.em(100);
+    &__card-holder {
+        display: grid;
+        grid-template-columns: repeat(3, 15%);
+        place-content: center;
+        gap: u.em(100);
+
+        &__card {
+            border-radius: u.em(20);
+            background: linear-gradient(90deg, rgba(0,60,153,1) 30%, rgba(0,125,255,1) 100%);
+            padding: u.em(20);
+            
+            h3, p {
+                color: white;
+            }
+
+            p {
+                font-weight: 600;
+            }
+        }
+    }
+
+    &__title {
+        font-size: u.rem(25);
+        width: 40%;
     }
 }
