@@ -83,17 +83,20 @@
             background: linear-gradient(90deg, rgba(0,60,153,1) 30%, rgba(0,125,255,1) 100%);
             padding: u.em(20);
             
-            h3, p {
+            h3 {
                 color: white;
+                margin-bottom: u.em(20);
             }
 
             p {
+                color: white;
                 font-weight: 600;
             }
         }
     }
 
     &__title {
+        display: none;
         font-size: u.rem(25);
         width: 40%;
     }
