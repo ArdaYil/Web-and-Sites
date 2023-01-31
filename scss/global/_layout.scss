@@ -3,7 +3,7 @@
 @use "../util" as u;
 
 .navbar {
-    background: linear-gradient(90deg, rgba(0,60,153,1) 30%, rgba(0,125,255,1) 100%);
+    background: var(--gradient-primary);
     //background-color: rgb(71, 71, 255);
     color: white;
     display: flex;
@@ -80,7 +80,7 @@
 
         &__card {
             border-radius: u.em(20);
-            background: linear-gradient(90deg, rgba(0,60,153,1) 30%, rgba(0,125,255,1) 100%);
+            background: var(--gradient-primary);
             padding: u.em(20);
             
             h3 {
@@ -99,5 +99,69 @@
         display: none;
         font-size: u.rem(25);
         width: 40%;
+    }
+}
+
+%form-operation {
+    padding: u.em(10) u.em(20);
+    border: none;
+    border-radius: u.em(10);
+}
+
+.auth-form {
+    width: fit-content;
+    margin: auto;
+    background: var(--gradient-primary);
+    padding: u.em(30) u.em(30);
+    padding-bottom: u.em(200);
+    border-radius: u.em(20);
+
+    &__btn-holder {
+        display: flex;
+        justify-content: center;
+        margin-bottom: u.em(30);
+        gap: u.em(10);
+
+        &__current-operation {
+            @extend %form-operation;
+
+            color: white;
+            background-color: black;
+        }
+
+        &__next-operation {
+            @extend %form-operation;
+
+            font-weight: 600;
+            background: white;
+        }
+    }
+
+    &__input-holder {
+        display: flex;
+        flex-direction: column;
+        gap: u.em(30);
+        margin-bottom: u.em(20);
+    }
+
+    &__input {
+        font-size: u.em(18);
+        padding: u.em(10) u.em(20);
+        border-radius: u.em(10);
+        outline: none;
+        width: u.em(300)
+    }
+
+    button {
+        background-color: black;
+        color: white;
+        padding: u.em(15) u.em(40);
+        border: none;
+        border-radius: u.em(10);
+        font-weight: 600;
+    }
+
+    label {
+        color: white;
     }
 }
