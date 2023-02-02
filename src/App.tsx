@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import MainNavBar from './common/mainNavbar';
 import Homepage from './homepage/homepage';
 import "../cssDist/index.css";
-import Login from './login/Login';
+import Login from './auth/Login';
 
 interface AppProps {
   

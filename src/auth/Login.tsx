@@ -21,7 +21,7 @@ class Login extends Form<LoginProps, LoginState> {
 
         return (
             <React.Fragment>
-                <form className="auth-form">
+                <form onSubmit={this.handleSubmit} className="auth-form">
                     <article className="auth-form__btn-holder">
                         <h1 className="auth-form__btn-holder__current-operation">Logga in</h1>
                         <Link className="auth-form__btn-holder__next-operation" to="/register">Registrera</Link>
@@ -31,7 +31,8 @@ class Login extends Form<LoginProps, LoginState> {
                         {/* {this.renderInput("Email Address", "email", "email")} */}
                         {this.renderInput("Lösenord", "password", inputClass, "password")}
                     </article>
-                    {this.renderCheckbox("newsletter", newsLetterText)}
+                    {/* {this.renderCheckbox("newsletter", newsLetterText, "auth-form__checkbox")}
+                    {this.renderCheckbox("t", newsLetterText, "auth-form__checkbox")} */}
                     {this.renderSubmit("Logga in")}
                 </form>
             </React.Fragment>
