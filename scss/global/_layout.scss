@@ -2,6 +2,8 @@
 
 @use "../util" as u;
 
+$main-padding: u.em(20);
+
 .navbar {
     background: var(--gradient-primary);
     //background-color: rgb(71, 71, 255);
@@ -9,13 +11,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: u.em(20) u.em(30);
+    padding: u.em(20) u.em(20);
     margin-bottom: u.em(80);
 
     &__nav-title {
         font-weight: 700;
         font-size: u.rem(32);
         color: white;
+    }
+
+    &__nav-link-container {
+        @include u.breakpoint-down(nav) {
+            display: none;
+        }
     }
 
     &__nav-link {
@@ -39,14 +47,33 @@
             width: 100%;
         }
     }
+
+    &__btn {
+        font-size: u.rem(30);
+
+        @include u.breakpoint-up(nav) {
+            display: none;
+        }
+    }
 }
 
 .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 80%;
+    max-width: u.em(1200);
     gap: u.em(20);
     margin-inline: auto;
+    justify-items: center;
+    padding-inline: $main-padding;
+    margin-bottom: u.em(100);
+
+    @include u.breakpoint-down(hero) {
+        grid-template-columns: 1fr;
+    }
+
+    @include u.custom-down(600) {
+        margin-bottom: u.em(50);
+    }
 
     &__title {
         font-size: u.rem(25);
@@ -59,29 +86,46 @@
     }
 
     &__img {
-        width: u.em(600);
+        max-width: u.em(600);
         border-radius: u.em(20);
         grid-row: span 3;
     }
 
     &__btn-holder {
         display: flex;
-        gap: u.em(20)
+        gap: u.em(20);
+
+        @include u.breakpoint-down(hero) {
+            margin-bottom: u.em(50);
+        }
     }
 }
 
 .main {
-    margin-top: u.em(100);
+    padding-inline: $main-padding;
+    max-width: u.em(1100);
+    margin-inline: auto;
+
     &__card-holder {
         display: grid;
-        grid-template-columns: repeat(3, 15%);
+        grid-template-columns: repeat(auto-fit, minmax(u.em(100), 20%));
         place-content: center;
-        gap: u.em(100);
+        gap: min(10%, u.em(100));
+        margin-bottom: u.em(100);
+
+        @include u.custom-down(800) {
+            grid-template-columns: 1fr;
+
+            &__card {
+                max-width: 100vw;
+            }
+        }
 
         &__card {
             border-radius: u.em(20);
             background: var(--gradient-primary);
             padding: u.em(20);
+            max-width: u.em(200);
             
             h3 {
                 color: white;
@@ -92,13 +136,72 @@
                 color: white;
                 font-weight: 600;
             }
+
+            @include u.custom-down(800) {
+                max-width: 100vw;
+            }
         }
     }
+}
 
-    &__title {
-        display: none;
-        font-size: u.rem(25);
-        width: 40%;
+.plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(u.em(100), 1fr));
+    gap: u.em(50);
+    justify-items: center;
+
+    @include u.custom-down(1000) {
+        grid-template-columns: 1fr;
+    }
+
+    &__plan {
+        $plan: &;
+
+        box-shadow: 0 0 u.em(10) u.em(1) black;
+        border-radius: u.em(10);
+        overflow: hidden;
+        max-width: u.em(400);
+
+        &--primary {
+            @extend #{$plan};
+
+            transform: scale(1.1);
+        }
+    
+        &__header {
+            padding: u.em(20) u.em(30);
+            background: linear-gradient(90deg, rgba(111,218,255,1) 0%, rgba(0,104,255,1) 100%);
+            padding-bottom: u.em(60);
+            gap: u.em(20);
+
+            #{$plan}--primary & {
+                background: var(--gradient-primary) !important;
+            }
+        }
+
+        &__heading {
+            color: white;
+            font-size: u.em(25);
+        }
+
+        &__price {
+            color: white;
+            font-size: u.em(25);
+        }
+
+        &__content {
+            padding: u.em(30) u.em(20);
+
+            & ul {
+                list-style-image: url("../../public/images/tick.png");
+                list-style-position: outside;
+            }
+
+            & li {
+                font-size: u.rem(20);
+                margin-bottom: u.em(10);
+            }
+        }
     }
 }
 
@@ -113,7 +216,7 @@
     margin: auto;
     background: var(--gradient-primary);
     padding: u.em(30) u.em(30);
-    padding-bottom: u.em(180);
+    height: u.em(500);
     border-radius: u.em(20);
 
     &__btn-holder {
@@ -159,10 +262,14 @@
         border: none;
         border-radius: u.em(10);
         font-weight: 600;
+        display: block;
+        margin-top: u.em(40);
     }
 
     label {
         color: white;
+        display: block;
+        margin-bottom: u.em(20);
     }
 
     &__checkbox {

@@ -21,9 +21,10 @@ class Form<Props, State> extends React.Component<FormProps, FormState> {
         event.preventDefault();
     }
 
-    renderInput = (label: string, name: string, className: string, type: string = "text"): JSX.Element => {
+    renderInput = (label: string, name: string, className: string, value: string, type: string = "text"): JSX.Element => {
         return <Input
             className={this.inputClassName(className)}
+            value={value}
             label={label}
             name={name}
             type={type}
@@ -38,7 +39,7 @@ class Form<Props, State> extends React.Component<FormProps, FormState> {
         )
     }
 
-    renderCheckbox = (name: string, text: string, className: string): JSX.Element => {
+    renderCheckbox = (name: string, text: string, value: string, className: string): JSX.Element => {
         return <Checkbox
             name={name}
             label={text}

@@ -1,6 +1,7 @@
 
 
 import * as React from 'react';
+import Plans from './plans';
 
 interface MainProps {
     
@@ -30,11 +31,7 @@ class Main extends React.Component<MainProps, MainState> {
                         <p>En webbsida behöver inte vara svår att få tag på!</p>
                     </div>
                 </section>
-                <h2 className="main__title">
-                    Vi är ett UF företag, bestående av 
-                    professionella webutvecklare, med kompetens 
-                    inom digital tech, design, och användar vänlighet
-                </h2>
+                <Plans />
             </article>
         );
     }
