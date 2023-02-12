@@ -1,6 +1,8 @@
 
 
 import * as React from 'react';
+import DomainPrices from './domainPrices';
+import DomainSearch from './domainSearch';
 import Plans from './plans';
 
 interface MainProps {
@@ -32,6 +34,8 @@ class Main extends React.Component<MainProps, MainState> {
                     </div>
                 </section>
                 <Plans />
+                <DomainSearch />
+                <DomainPrices />
             </article>
         );
     }

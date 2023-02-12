@@ -8,6 +8,7 @@ interface InputProps {
     value: string;
     name: string;
     type: string;
+    onChange: Function,
     className: string;
 }
  
@@ -22,8 +23,7 @@ class Input extends React.Component<InputProps, InputState> {
     state: InputState = {}
 
     render() { 
-        const {label, type, name, className, value} = this.props;
-        const {onChange} = this.context.authInput;
+        const {label, type, name, className, value, onChange} = this.props;
        
         return (
             <input

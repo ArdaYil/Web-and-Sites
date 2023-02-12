@@ -21,12 +21,13 @@ class Form<Props, State> extends React.Component<FormProps, FormState> {
         event.preventDefault();
     }
 
-    renderInput = (label: string, name: string, className: string, value: string, type: string = "text"): JSX.Element => {
+    renderInput = (label: string, name: string, className: string, value: string, onChange: Function, type: string = "text"): JSX.Element => {
         return <Input
             className={this.inputClassName(className)}
             value={value}
             label={label}
             name={name}
+            onChange={onChange}
             type={type}
         />
     }

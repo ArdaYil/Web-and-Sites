@@ -10,25 +10,30 @@ import Register from './auth/Register';
 import AppContext from './context/AppContext';
 import AuthInput from './interfaces/AuthInput';
 import Plans from './interfaces/Plans';
+import DomainSearch from "./interfaces/DomainSearch";
 interface AppProps {
   
 }
 interface AppState {
+  domainSearch: DomainSearch,
   authInput: AuthInput;
   plans: Plans[];
 }
  
 class App extends React.Component<AppProps, AppState> {
   state: AppState = {
+    domainSearch: {
+      value: "",
+      onChange: (value: string) => this.handleDomainInputChange(value),
+    },
     authInput: {
       username: "",
       email: "",
       password: "",
       newsletter: false,
       termsOfUse: false,
-      onChange: (input: string, value: string | boolean): void => {this.handleInputChange(input, value)}
+      onChange: (input: string, value: string | boolean): void => this.handleAuthInputChange(input, value)
     },
-
     plans: [
       {
         title: "Enkel",
@@ -69,11 +74,18 @@ class App extends React.Component<AppProps, AppState> {
     ]
   }
 
-  handleInputChange = (input: string, value: string | boolean): void => {
+  handleAuthInputChange = (input: string, value: string | boolean): void => {
     const authInput: AuthInput = {...this.state.authInput};
     authInput[input] = value;
-    console.log(input)
+
     this.setState({authInput});
+  }
+
+  handleDomainInputChange = (value: string) => {
+    const domainSearch: DomainSearch = {...this.state.domainSearch};
+    domainSearch.value = value;
+
+    this.setState({domainSearch});
   }
 
   render() { 

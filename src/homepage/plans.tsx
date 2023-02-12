@@ -23,9 +23,12 @@ class Plans extends React.Component<PlansProps, PlansState> {
         const plans: PlansInterface[] = this.context.plans; 
         
         return (
-            <div className="plans">
-                {plans.map((plan: PlansInterface) => <Plan key={plan.title} plan={plan}/>)}
-            </div>
+            <section>
+                <h2 className="section-title">Välj rätt packet för dig!</h2>
+                <div className="plans">
+                    {plans.map((plan: PlansInterface) => <Plan key={plan.title} plan={plan}/>)}
+                </div>
+            </section>
         );
     }
 }

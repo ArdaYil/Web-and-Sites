@@ -149,6 +149,7 @@ $main-padding: u.em(20);
     grid-template-columns: repeat(auto-fit, minmax(u.em(100), 1fr));
     gap: u.em(50);
     justify-items: center;
+    margin-bottom: u.em(100);
 
     @include u.custom-down(1000) {
         grid-template-columns: 1fr;
@@ -205,6 +206,49 @@ $main-padding: u.em(20);
     }
 }
 
+.domain {
+    margin-bottom: u.em(40);
+
+    &__input-wrapper {
+        border-radius: u.em(15);
+        overflow: hidden;
+        box-shadow: 0 0 u.em(10) u.em(1) black;
+        max-width: u.em(800);
+        margin-inline: auto;
+        padding: u.em(5) u.em(10) u.em(5) u.em(20);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: u.em(10);
+    }
+
+    &__input {
+        font-size: u.rem(25);
+        width: auto;
+    }
+
+    & button {
+        border: none;
+        background: var(--gradient-primary);
+        padding: u.em(10) u.em(30);
+        font-size: u.rem(20);
+        color: white;
+        font-weight: 700;
+        border-radius: u.em(10);
+    }
+}
+
+.domain-prices {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    margin-bottom: u.em(100);
+
+    &__price {
+        padding: u.em(10) u.em(20);
+        max-width: u.em(150);
+        justify-self: center;
+    }
+}
+
 %form-operation {
     padding: u.em(10) u.em(20);
     border: none;
@@ -251,7 +295,6 @@ $main-padding: u.em(20);
         font-size: u.em(18);
         padding: u.em(10) u.em(20);
         border-radius: u.em(10);
-        outline: none;
         width: u.em(300)
     }
 

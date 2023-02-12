@@ -23,6 +23,7 @@ class Login extends Form<LoginProps, LoginState> {
         const inputClass = "auth-form"
         const newsLetterText = "Vill du få nyhetsbrev av oss?"
         const {username, password} = this.context.authInput;
+        const inputChanged = (name: string, value: string) => this.context.authInput.onChange(name, value);
 
         return (
             <React.Fragment>
@@ -32,8 +33,8 @@ class Login extends Form<LoginProps, LoginState> {
                         <Link className="auth-form__btn-holder__next-operation" to="/register">Registrera</Link>
                     </article>
                     <article className="auth-form__input-holder">
-                        {this.renderInput("Användarnamn", "username", inputClass, username)}
-                        {this.renderInput("Lösenord", "password", inputClass, password, "password")}
+                        {this.renderInput("Användarnamn", "username", inputClass, username, inputChanged)}
+                        {this.renderInput("Lösenord", "password", inputClass, password, inputChanged, "password")}
                     </article>
                     {this.renderSubmit("Logga in")}
                 </form>

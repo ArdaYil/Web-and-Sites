@@ -40,3 +40,19 @@
         }
     }
 }
+
+.section-title {
+    text-align: center;
+    margin-bottom: f.em(40);
+    font-size: f.rem(32);
+    text-transform: capitalize;
+}
+
+.badge {
+    background-image: var(--gradient-primary);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    border-radius: f.em(10);
+    white-space: nowrap;
+}
