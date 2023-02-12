@@ -34,8 +34,10 @@ class Main extends React.Component<MainProps, MainState> {
                     </div>
                 </section>
                 <Plans />
-                <DomainSearch />
-                <DomainPrices />
+                <div className="domain-wrapper" data-aos="fade-up">
+                    <DomainSearch />
+                    <DomainPrices />
+                </div>
             </article>
         );
     }

@@ -25,7 +25,7 @@ class Plans extends React.Component<PlansProps, PlansState> {
         return (
             <section>
                 <h2 className="section-title">Välj rätt packet för dig!</h2>
-                <div className="plans">
+                <div className="plans" data-aos="fade-up">
                     {plans.map((plan: PlansInterface) => <Plan key={plan.title} plan={plan}/>)}
                 </div>
             </section>

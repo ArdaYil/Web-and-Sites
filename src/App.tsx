@@ -11,6 +11,7 @@ import AppContext from './context/AppContext';
 import AuthInput from './interfaces/AuthInput';
 import Plans from './interfaces/Plans';
 import DomainSearch from "./interfaces/DomainSearch";
+import AOS from "aos";
 interface AppProps {
   
 }
@@ -72,6 +73,10 @@ class App extends React.Component<AppProps, AppState> {
         ]
       }
     ]
+  }
+
+  componentDidMount = () => {
+    AOS.init({});
   }
 
   handleAuthInputChange = (input: string, value: string | boolean): void => {
