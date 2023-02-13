@@ -50,10 +50,10 @@ class App extends React.Component<AppProps, AppState> {
       },
       {
         title: "Professionell",
-        price: "3,000",
+        price: "7,500",
         primary: true,
         benefits: [
-          "Fler siding webbplats",
+          "Fler sidig webbplats",
           "Backend funktionalitet",
           "Web & Sites Domän",
           "Kvalitativa webbsidor",
@@ -62,7 +62,7 @@ class App extends React.Component<AppProps, AppState> {
       },
       {
         title: "Avancerad",
-        price: "7,500",
+        price: "12,500",
         primary: false,
         benefits: [
           "Stor Webbapplikation",
