@@ -12,6 +12,7 @@ import AuthInput from './interfaces/AuthInput';
 import Plans from './interfaces/Plans';
 import DomainSearch from "./interfaces/DomainSearch";
 import AOS from "aos";
+import MainFooter from './common/mainFooter';
 interface AppProps {
   
 }
@@ -102,6 +103,7 @@ class App extends React.Component<AppProps, AppState> {
           <Route path="register" element={<AppContext.Provider value={this.state}><Register /></AppContext.Provider>} />
           <Route path="/" element={<AppContext.Provider value={this.state}><Homepage /></AppContext.Provider>} />
         </Routes>
+        <MainFooter />
       </React.Fragment>
     );
   }

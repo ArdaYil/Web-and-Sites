@@ -249,6 +249,33 @@ $main-padding: u.em(20);
     }
 }
 
+.footer {
+    background-image: var(--gradient-primary);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__content {
+        display: flex;
+    }
+
+    &__section-heading {
+        color: white;
+        margin-bottom: u.em(20);
+        font-size: u.rem(20)
+    }
+
+    &__copyright {
+        color: white;
+    }
+    
+    &__section-item {
+        color: white;
+    }
+}
+
 %form-operation {
     padding: u.em(10) u.em(20);
     border: none;
