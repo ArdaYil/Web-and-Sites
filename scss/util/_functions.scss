@@ -16,3 +16,11 @@
 @function rem($px) {
     @return toRelativeUnit($px) + rem;
 }
+
+@function errorIfUnit($value) {
+    @if (not math.is-unitless($value)) {
+        @error("Input must be unitless");
+    }
+
+    @return $value;
+}

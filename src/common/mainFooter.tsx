@@ -19,8 +19,8 @@ class MainFooter extends React.Component<MainFooterProps, MainFooterState> {
                 <div className="footer__container">
                     <header className="footer__header">
                         <section>
-                            <h2 className="footer__section-heading">Web & Sites</h2>
-                            <p className="footer__copyright">Copyright &copy; 2023 Web & Sites UF All rights reserved</p>
+                            <h2 className="footer__logo">Web & Sites</h2>
+                            <p className="footer__copyright">Copyright &copy; 2023 Web & Sites UF, All rights reserved</p>
                         </section>
                     </header>
                     <div className="footer__content">
@@ -49,6 +49,13 @@ class MainFooter extends React.Component<MainFooterProps, MainFooterState> {
                                 <p className="footer__section-item">Frekvent ställda frågor</p>
                                 <p className="footer__section-item">Ångerrätt</p>
                                 <p className="footer__section-item">Fel i tjänster</p>
+                            </article>
+                        </section>
+                        <section>
+                            <h2 className="footer__section-heading">Sociala Medier</h2>
+                            <article>
+                                <a href="https://www.instagram.com/webandsitesuf/"><img className="footer__social-icon" src="./dist/images/instagram.webp" /></a>
+                                <a href="/"><img className="footer__social-icon" src="./dist/images/facebook.webp" /></a>
                             </article>
                         </section>
                     </div>

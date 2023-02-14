@@ -23,7 +23,7 @@ class Hero extends React.Component<HeroProps, HeroState> {
                         <Link className="btn--black" to="/register">Registrera Konto</Link>
                     </section>
                 </section>
-                <img className="hero__img" src="/images/computer.jpg"/>
+                <img className="hero__img" src="/images/computer.webp"/>
             </article>
         );
     }

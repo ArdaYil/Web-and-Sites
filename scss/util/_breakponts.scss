@@ -28,12 +28,16 @@ $breakpoints: (
 }
 
 @mixin custom-up($size) {
+    $a: f.errorIfUnit($size);
+    
     @media screen and (min-width: f.em($size)) {
         @content;
     }
 }
 
 @mixin custom-down($size) {
+    $a: f.errorIfUnit($size);
+    
     $newSize: $size - 0.02;
 
     @media screen and (max-width: f.em($newSize)) {
