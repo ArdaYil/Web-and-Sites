@@ -277,30 +277,35 @@ a {
   margin-inline: auto;
   padding: 0.3125em 0.625em 0.3125em 1.25em;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto 6.25em;
   gap: 0.625em;
 }
 .domain__input {
-  font-size: 1.5625rem;
-  width: auto;
+  font-size: 0.0625em;
+  width: 100%;
 }
 .domain button {
   border: none;
   background: var(--gradient-primary);
   padding: 0.625em 1.875em;
   font-size: 1.25rem;
+  width: 100%;
   color: white;
   font-weight: 700;
   border-radius: 0.625em;
 }
 
 .domain-prices {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  display: flex;
+  gap: 0.625em;
   margin-bottom: 6.25em;
+  flex-wrap: wrap;
+  margin-inline: auto;
+  justify-content: center;
 }
 .domain-prices__price {
   padding: 0.625em 1.25em;
+  width: 9.375em;
   max-width: 9.375em;
   justify-self: center;
 }
@@ -335,6 +340,15 @@ a {
     margin-bottom: 2.5em;
   }
 }
+@media screen and (max-width: 31.24875em) {
+  .footer__content {
+    margin-inline: auto;
+    width: 12.5em;
+  }
+  .footer__content section {
+    width: 100%;
+  }
+}
 .footer__section-heading {
   font-size: 1.25rem;
 }
@@ -348,10 +362,14 @@ a {
 }
 .footer__section-item {
   color: white;
+  margin-bottom: 0.625em;
+}
+.footer__social-container {
+  display: flex;
+  gap: 0.625em;
 }
 .footer__social-icon {
   width: 3.125em;
-  display: block;
   margin-inline: auto;
   margin-bottom: 1.25em;
 }

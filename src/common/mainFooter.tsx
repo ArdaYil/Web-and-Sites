@@ -53,7 +53,7 @@ class MainFooter extends React.Component<MainFooterProps, MainFooterState> {
                         </section>
                         <section>
                             <h2 className="footer__section-heading">Sociala Medier</h2>
-                            <article>
+                            <article className="footer__social-container">
                                 <a href="https://www.instagram.com/webandsitesuf/"><img className="footer__social-icon" src="/images/instagram.webp" /></a>
                                 <a href="/"><img className="footer__social-icon" src="/images/facebook.webp" /></a>
                             </article>
