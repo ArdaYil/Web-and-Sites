@@ -221,7 +221,7 @@ $main-padding: u.em(20);
     }
 
     &__input {
-        font-size: u.em(1);
+        font-size: u.em(20);
         width: 100%;
     }
 
@@ -340,6 +340,7 @@ $main-padding: u.em(20);
     padding: u.em(30) u.em(30);
     height: u.em(500);
     border-radius: u.em(20);
+    margin-bottom: u.em(80);
 
     &__btn-holder {
         display: flex;
